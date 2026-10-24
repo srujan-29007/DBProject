@@ -1,0 +1,58 @@
+:root {
+  --paper: #f2f4f3; --card: #fff; --ink: #14232b; --muted: #5b6b70;
+  --line: #d5dbd8; --tape: #f2b705; --ok: #1f7a4d; --bad: #b3261e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 'Instrument Sans', system-ui, sans-serif; }
+h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; line-height: 1.15; margin: 0 0 .5rem; }
+h2 { font-size: 1.6rem; } h3 { font-size: 1.1rem; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+button, input { font: inherit; }
+button { border: 1.5px solid var(--ink); background: transparent; color: var(--ink); padding: .4rem .9rem; border-radius: 4px; cursor: pointer; }
+button:hover:not(:disabled) { background: var(--ink); color: #fff; }
+button:disabled { opacity: .35; cursor: not-allowed; }
+button.primary { background: var(--tape); border-color: var(--tape); font-weight: 600; }
+button.primary:hover:not(:disabled) { background: #d99f00; border-color: #d99f00; color: var(--ink); }
+input { border: 1.5px solid var(--line); border-radius: 4px; padding: .45rem .6rem; background: #fff; min-width: 0; }
+
+.bar { display: flex; align-items: center; gap: 1.25rem; padding: .75rem 1.5rem; background: var(--ink); color: #fff; flex-wrap: wrap; }
+.bar b { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.25rem; margin-right: auto; }
+.bar button { color: #fff; border-color: transparent; padding: .3rem .6rem; }
+.bar button.on { border-bottom: 3px solid var(--tape); border-radius: 0; }
+.bar button:hover:not(:disabled) { background: transparent; border-color: #fff; }
+main { max-width: 1080px; margin: 0 auto; padding: 1.5rem; }
+.err { color: var(--bad); font-weight: 500; } .good { color: var(--ok); font-weight: 500; }
+.muted { color: var(--muted); }
+
+.auth { max-width: 380px; margin: 8vh auto; padding: 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; display: grid; gap: .75rem; }
+.hint { font-size: .85rem; color: var(--muted); }
+
+.shop { display: grid; grid-template-columns: 1fr 310px; gap: 2rem; align-items: start; }
+@media (max-width: 800px) { .shop { grid-template-columns: 1fr; } }
+.pills { display: flex; gap: .5rem; flex-wrap: wrap; margin: .75rem 0; }
+.pills button.on { background: var(--ink); color: #fff; }
+.prod { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: center; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+.prod small { display: block; color: var(--muted); }
+.low { color: var(--bad); }
+.step { display: flex; align-items: center; gap: .5rem; }
+.step button { padding: .15rem .6rem; }
+aside { position: sticky; top: 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1rem; }
+.line { display: flex; justify-content: space-between; padding: .3rem 0; }
+.total { border-top: 2px solid var(--ink); margin-top: .5rem; padding-top: .5rem; font-weight: 600; }
+
+.order { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.order header { display: flex; gap: 1.25rem; flex-wrap: wrap; cursor: pointer; align-items: baseline; }
+.order header b:last-child { margin-left: auto; }
+.track { display: flex; gap: 4px; list-style: none; padding: 0; margin: .9rem 0 .5rem; }
+.track li { flex: 1; padding-top: .45rem; border-top: 6px solid var(--line); font-size: .82rem; color: var(--muted); }
+.track li.done { border-color: var(--tape); color: var(--ink); font-weight: 600; }
+.cancelled { color: var(--bad); font-weight: 600; margin: .75rem 0; }
+code { font-family: ui-monospace, Consolas, monospace; background: var(--paper); padding: .1rem .4rem; border-radius: 3px; }
+.actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; align-items: center; }
+
+table { width: 100%; border-collapse: collapse; margin: .5rem 0 1.5rem; }
+th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--muted); font-size: .9rem; }
+td input { width: 6.5rem; }
+.stats { display: flex; gap: 2.5rem; flex-wrap: wrap; margin: 0 0 1.5rem; }
+.stats dt { color: var(--muted); font-size: .9rem; } .stats dd { margin: 0; font: 600 1.6rem 'Bricolage Grotesque', sans-serif; }
